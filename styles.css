@@ -1,0 +1,148 @@
+:root {
+  --bg: #151311;
+  --ink: #e9ddc3;
+  --muted: #a99f8b;
+  --red: #a3262a;
+  --line: rgb(233 221 195 / 0.18);
+  --page: 780px;
+  --display: "Shippori Mincho", "Yu Mincho", Georgia, serif;
+  --body: "Zen Kaku Gothic New", "Yu Gothic", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.65 var(--body); overflow-x: hidden; }
+
+/* paper grain over the whole sheet */
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 30; opacity: 0.11;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.bar {
+  position: fixed; z-index: 20; top: 14px; left: 50%; translate: -50% 0;
+  width: min(var(--page), calc(100% - 24px));
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 9px 14px; border: 1px solid var(--line); border-radius: 4px;
+  background: rgb(21 19 17 / 0.88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.home { display: flex; align-items: center; gap: 10px; font: 800 18px var(--display); }
+.seal {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 3px;
+  background: var(--red); font: 800 11px/1.05 var(--display); writing-mode: vertical-rl; letter-spacing: 0;
+}
+.bar nav { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+.bar nav a:hover { color: var(--ink); }
+.bar .gh { color: var(--ink); }
+
+main { width: min(var(--page), calc(100% - 40px)); margin: 0 auto; padding-top: 76px; }
+
+.cover { position: relative; width: min(1080px, 100vw); margin-left: 50%; translate: -50% 0; }
+.cover img {
+  display: block; width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+.cover p {
+  position: absolute; top: 9%; left: 9%; writing-mode: vertical-rl;
+  font: 800 clamp(15px, 2.4vw, 26px) var(--display); letter-spacing: 0.22em;
+  text-shadow: 0 0 6px var(--bg), 0 0 14px var(--bg);
+}
+
+.intro { padding: 12px 0 56px; }
+h1 { font: 800 clamp(34px, 6.4vw, 58px)/1.1 var(--display); letter-spacing: -0.01em; }
+h1::after { content: ""; display: block; width: 132px; height: 6px; margin: 18px 0 20px; background: var(--red); clip-path: polygon(0 30%, 18% 0, 64% 18%, 100% 8%, 96% 70%, 52% 100%, 22% 74%, 2% 90%); }
+.intro p { max-width: 56ch; font-size: 18px; }
+.stack { display: flex; flex-wrap: wrap; margin-top: 30px; border-block: 1px solid var(--line); }
+.stack li { flex: 1 1 auto; padding: 11px 8px; text-align: center; font: 600 13px var(--display); letter-spacing: 0.16em; text-transform: uppercase; }
+
+.band { padding: 52px 0; border-top: 1px solid var(--line); }
+.band-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+h2 { font: 800 24px var(--display); }
+button { font: 500 13px var(--body); color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 3px; padding: 4px 12px; cursor: pointer; }
+button:hover { color: var(--ink); border-color: var(--ink); }
+
+/* the stamp reel */
+.reel {
+  overflow: hidden; padding: 14px 0 20px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.track { display: flex; width: max-content; animation: reel 38s linear infinite; }
+.track li { padding: 6px 15px; }
+.reel:hover .track, .reel.paused .track { animation-play-state: paused; }
+/* keyboard focus: hold the row still from the start so the focused stamp can be scrolled into view */
+.reel:has(:focus-visible) { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+.reel:has(:focus-visible) .track { animation: none; }
+@keyframes reel { to { transform: translateX(-50%); } }
+
+.stamp {
+  position: relative; display: flex; flex-direction: column; justify-content: space-between;
+  width: 214px; height: 296px; padding: 16px 14px 12px;
+  transition: rotate 0.25s ease, translate 0.25s ease;
+}
+.stamp:hover, .stamp:focus-visible { rotate: -2.5deg; translate: 0 -5px; }
+/* perforation: page-coloured holes punched along all four edges */
+.stamp::before {
+  content: ""; position: absolute; inset: -6px; pointer-events: none;
+  --hole: radial-gradient(circle closest-side, var(--bg) 78%, transparent 84%);
+  background:
+    var(--hole) top left / 14.125px 12px repeat-x,
+    var(--hole) bottom left / 14.125px 12px repeat-x,
+    var(--hole) top left / 12px 14.0952px repeat-y,
+    var(--hole) top right / 12px 14.0952px repeat-y;
+}
+.stamp.red { background: var(--red); color: var(--ink); }
+.stamp.cream { background: var(--ink); color: var(--bg); }
+.stamp.black { background: #060505; color: var(--ink); box-shadow: inset 0 0 0 7px #060505, inset 0 0 0 8px var(--line); }
+.name { font: 800 19px/1.15 var(--display); text-transform: uppercase; text-align: center; min-height: 44px; display: grid; place-items: center; }
+.stamp img { display: block; width: 100%; height: auto; }
+.foot { display: flex; justify-content: space-between; align-items: center; font: 600 12px var(--display); letter-spacing: 0.14em; text-transform: uppercase; }
+.foot [lang="ja"] { font-size: 20px; letter-spacing: 0; }
+/* postmark pressed on the stamp you point at */
+.stamp::after {
+  content: "ENESCATALCA\A VIEW CODE"; white-space: pre; position: absolute; right: -12px; bottom: 40px;
+  display: grid; place-content: center; width: 104px; height: 104px; border-radius: 50%;
+  border: 2px solid currentColor; outline: 1px solid currentColor; outline-offset: 4px;
+  font: 800 11px/1.5 var(--display); letter-spacing: 0.06em; text-align: center;
+  opacity: 0; scale: 1.5; rotate: -14deg; pointer-events: none; color: var(--ink); background: var(--red);
+  box-shadow: 0 0 0 4px var(--red);
+  transition: opacity 0.15s ease, scale 0.2s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.stamp:hover::after, .stamp:focus-visible::after { opacity: 0.95; scale: 1; }
+.stamp.red::after { background: var(--bg); box-shadow: 0 0 0 4px var(--bg); }
+
+.rows { margin-top: 18px; }
+.rows a { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 15px 10px; border-bottom: 1px solid var(--line); transition: background-color 0.15s ease; }
+.rows a:hover { background: rgb(233 221 195 / 0.06); }
+.rows strong { font: 800 16px/1.5 var(--display); }
+.rows span { color: var(--muted); font-size: 15px; }
+.rows em { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 2px; background: var(--red); font: 700 10px/1.8 var(--body); letter-spacing: 0.12em; text-transform: uppercase; vertical-align: 2px; }
+
+.contact { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 80px; }
+.contact p { margin: 8px 0 20px; color: var(--muted); }
+.button { display: inline-block; padding: 10px 18px; background: var(--ink); color: var(--bg); font: 800 15px var(--display); border-radius: 3px; }
+.button:hover { background: var(--red); color: var(--ink); }
+.contact img { width: min(240px, 40%); height: auto; }
+
+@media (max-width: 640px) {
+  .bar nav a:not(.gh) { display: none; }
+  .cover { width: 100vw; overflow: hidden; }
+  .cover img { width: 138%; margin-left: -19%; }
+  .cover p { left: 6%; top: 0; }
+  .rows a { grid-template-columns: 1fr; gap: 3px; }
+  .stack { display: grid; grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .track { animation: none; }
+  .track [data-copy] { display: none; }
+  .reel { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  #pause { display: none; }
+  .stamp, .stamp::after { transition: none; }
+}

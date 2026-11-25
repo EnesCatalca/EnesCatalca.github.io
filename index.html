@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EnesCatalca</title>
+  <meta name="description" content="EnesCatalca: focusing on LLMs, AI agents and automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <a class="home" href="#top"><span class="seal" aria-hidden="true" lang="ja">記録</span>EnesCatalca</a>
+    <nav>
+      <a href="#work">Earlier work</a>
+      <a href="#open-source">Open source</a>
+      <a href="#contact">Contact</a>
+      <a class="gh" href="https://github.com/EnesCatalca">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="cover" aria-hidden="true">
+      <img src="assets/cover.webp" alt="" width="1774" height="817">
+      <p lang="ja">開発者の記録</p>
+    </div>
+
+    <section class="intro">
+      <h1>Building toward agents that work.</h1>
+      <p>I'm Enes. My focus now is large language models, AI agents and automation. My public projects so far are mostly computer vision; building in this new direction is what comes next.</p>
+      <ul class="stack" aria-label="What I'm focusing on">
+        <li>LLMs</li><li>AI Agents</li><li>Automation</li><li>Python</li>
+      </ul>
+    </section>
+
+    <section class="band" id="work">
+      <div class="band-head">
+        <h2>Earlier work</h2>
+        <button type="button" id="pause">Pause</button>
+      </div>
+
+      <div class="reel">
+        <ul class="track" id="track">
+          <li><a class="stamp red" href="https://github.com/EnesCatalca/YOLO_Ders">
+            <span class="name">YOLO</span><img src="assets/hawk.webp" alt="" width="480" height="480">
+            <span class="foot"><span>Python</span><span lang="ja" aria-hidden="true">眼</span></span></a></li>
+          <li><a class="stamp cream" href="https://github.com/EnesCatalca/image-dataset-collector">
+            <span class="name">Dataset Collector</span><img src="assets/prints.webp" alt="" width="480" height="480">
+            <span class="foot"><span>JavaScript</span><span lang="ja" aria-hidden="true">集</span></span></a></li>
+          <li><a class="stamp black" href="https://github.com/EnesCatalca/FaceGuard">
+            <span class="name">FaceGuard</span><img src="assets/mask.webp" alt="" width="480" height="480">
+            <span class="foot"><span>Python</span><span lang="ja" aria-hidden="true">守</span></span></a></li>
+          <li><a class="stamp cream" href="https://github.com/EnesCatalca/opencv">
+            <span class="name">OpenCV Notes</span><img src="assets/owl.webp" alt="" width="480" height="480">
+            <span class="foot"><span>Python</span><span lang="ja" aria-hidden="true">学</span></span></a></li>
+          <li><a class="stamp red" href="https://github.com/EnesCatalca/mal-tierlist-maker">
+            <span class="name">Tierlist Maker</span><img src="assets/pagoda.webp" alt="" width="480" height="480">
+            <span class="foot"><span>React</span><span lang="ja" aria-hidden="true">段</span></span></a></li>
+        </ul>
+      </div>
+
+      <ul class="rows">
+        <li><a href="https://github.com/EnesCatalca/YOLO_Ders"><strong>YOLO object detection</strong><span>YOLOv3 on images, video and an Android camera, plus a custom YOLOv4 trained on 800 labelled images to spot Boston Dynamics' Spot.</span></a></li>
+        <li><a href="https://github.com/EnesCatalca/image-dataset-collector"><strong>Image Dataset Collector</strong><span>A Chrome and Brave extension that saves web images into your folder as sequentially numbered JPEGs.</span></a></li>
+        <li><a href="https://github.com/EnesCatalca/FaceGuard"><strong>FaceGuard</strong><span>Locks Windows when the webcam stops seeing you. Built on YuNet and SFace. A convenience lock, not access control.</span></a></li>
+        <li><a href="https://github.com/EnesCatalca/opencv"><strong>OpenCV notes</strong><span>Worked examples from image basics to plate reading, vehicle counting and hand gestures. Written in Turkish.</span></a></li>
+        <li><a href="https://github.com/EnesCatalca/mal-tierlist-maker"><strong>MAL Tierlist Maker</strong><span>Turns a MyAnimeList profile into a tier list you can rearrange by dragging and export as PNG.</span></a></li>
+      </ul>
+    </section>
+
+    <section class="band" id="open-source">
+      <div class="band-head"><h2>Open source</h2></div>
+      <ul class="rows">
+        <li><a href="https://github.com/avenoxai/avenoxbeyin/pull/881"><strong>avenoxbeyin <em>merged</em></strong><span>A persistent memory system for AI coding agents. My fix makes its command line name a refused state write instead of failing with a bare PermissionError.</span></a></li>
+      </ul>
+    </section>
+
+    <section class="band contact" id="contact">
+      <div>
+        <h2>Get in touch</h2>
+        <p>Open an issue on any repository, or find me on GitHub.</p>
+        <a class="button" href="https://github.com/EnesCatalca">@EnesCatalca ↗</a>
+      </div>
+      <img src="assets/toad.webp" alt="A toad resting on a small cloud" width="480" height="480">
+    </section>
+  </main>
+</body>
+</html>
