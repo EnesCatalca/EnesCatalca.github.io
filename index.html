@@ -3,89 +3,166 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EnesCatalca</title>
+  <title>EnesCatalca — File 001</title>
   <meta name="description" content="EnesCatalca: focusing on LLMs, AI agents and automation.">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@500;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <div class="frame" aria-hidden="true">
+    <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  </div>
+
   <header class="bar">
-    <a class="home" href="#top"><span class="seal" aria-hidden="true" lang="ja">記録</span>EnesCatalca</a>
-    <nav>
-      <a href="#work">Earlier work</a>
-      <a href="#open-source">Open source</a>
-      <a href="#contact">Contact</a>
+    <a class="home" href="#top"><b>EC</b><span>EnesCatalca</span></a>
+    <nav aria-label="Sections">
+      <a href="#work"><i>01</i>Work</a>
+      <a href="#open-source"><i>02</i>Open source</a>
+      <a href="#contact"><i>03</i>Contact</a>
       <a class="gh" href="https://github.com/EnesCatalca">GitHub ↗</a>
     </nav>
+    <p class="readout" aria-hidden="true"><span id="sec">§00 COVER</span><span id="pct">000%</span></p>
   </header>
 
   <main id="top">
-    <div class="cover" aria-hidden="true">
-      <img src="assets/cover.webp" alt="" width="1774" height="817">
-      <p lang="ja">開発者の記録</p>
+    <!-- 01 · Cover -->
+    <section class="cover" aria-labelledby="name">
+      <div class="cover-type">
+        <p class="jp-giant" lang="ja" aria-hidden="true">エネス</p>
+        <h1 id="name"><span class="wide">ENES</span><span class="wide">CATALCA</span></h1>
+        <p class="sub"><span lang="ja">開発者の記録</span><span>DEVELOPER FILE · N°001</span></p>
+      </div>
+
+      <dl class="spec">
+        <div><dt>Focus</dt><dd>LLMs / Agents / Automation</dd></div>
+        <div><dt>Base</dt><dd>Python</dd></div>
+        <div><dt>Status</dt><dd><span class="blink" aria-hidden="true"></span>Building</dd></div>
+      </dl>
+
+      <figure class="plate tall">
+        <img src="assets/p/sokak.webp" alt="A narrow back alley at night under tangled power cables, printed as a grainy black and white photocopy" width="1000" height="1500">
+        <span class="cross" aria-hidden="true"></span>
+        <figcaption><span>PLATE A</span><span>NIGHT ALLEY</span></figcaption>
+      </figure>
+
+      <aside class="cover-side" aria-hidden="true">
+        <span class="hatch"></span>
+        <svg class="globe" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/><ellipse cx="50" cy="50" rx="20" ry="46"/><ellipse cx="50" cy="50" rx="36" ry="46"/><path d="M50 4v92M4 50h92M9 30h82M9 70h82"/></svg>
+        <p class="vert">BUILDING TOWARD AGENTS THAT WORK</p>
+        <svg class="barcode" data-code="ENESCATALCA" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+      </aside>
+    </section>
+
+    <!-- Headline -->
+    <section class="headline" aria-labelledby="headline">
+      <h2 id="headline"><span>AGENTS</span><span class="kata" lang="ja" aria-hidden="true">エージェント</span><span>THAT WORK.</span></h2>
+      <div class="intro">
+        <p>I'm Enes. My focus now is large language models, AI agents and automation. My public projects so far are mostly computer vision; building in this new direction is what comes next.</p>
+        <p class="stamp-box"><span>NEXT</span><span lang="ja">次</span></p>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>LLM</span><i>✕</i><span lang="ja">言語モデル</span><i>✕</i><span>AGENTS</span><i>✕</i><span lang="ja">エージェント</span><i>✕</i><span>AUTOMATION</span><i>✕</i><span lang="ja">自動化</span><i>✕</i><span>PYTHON</span><i>✕</i>
+      </div>
     </div>
 
-    <section class="intro">
-      <h1>Building toward agents that work.</h1>
-      <p>I'm Enes. My focus now is large language models, AI agents and automation. My public projects so far are mostly computer vision; building in this new direction is what comes next.</p>
-      <ul class="stack" aria-label="What I'm focusing on">
-        <li>LLMs</li><li>AI Agents</li><li>Automation</li><li>Python</li>
-      </ul>
+    <!-- 02 · Work -->
+    <section class="work" id="work" aria-labelledby="work-h" data-sec="§01 WORK">
+      <header class="sec-head">
+        <h2 id="work-h">Earlier<br>work</h2>
+        <p class="jp-side" lang="ja" aria-hidden="true">過去の作品</p>
+        <p class="note">Five repositories, mostly computer vision.<br>Index 01 — 05.</p>
+      </header>
+
+      <ol class="plates" role="list">
+        <li><a class="card" href="https://github.com/EnesCatalca/YOLO_Ders">
+          <span class="no">01</span><span class="kanji" lang="ja" aria-hidden="true">眼</span>
+          <img src="assets/p/hawk.webp" alt="" width="480" height="480" loading="lazy">
+          <strong>YOLO object detection</strong>
+          <span class="desc">YOLOv3 on images, video and an Android camera, plus a custom YOLOv4 trained on 800 labelled images to spot Boston Dynamics' Spot.</span>
+          <span class="meta"><span>Python</span><svg class="barcode" data-code="YOLO_Ders" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg></span>
+        </a></li>
+        <li><a class="card" href="https://github.com/EnesCatalca/image-dataset-collector">
+          <span class="no">02</span><span class="kanji" lang="ja" aria-hidden="true">集</span>
+          <img src="assets/p/prints.webp" alt="" width="480" height="480" loading="lazy">
+          <strong>Image Dataset Collector</strong>
+          <span class="desc">A Chrome and Brave extension that saves web images into your folder as sequentially numbered JPEGs.</span>
+          <span class="meta"><span>JavaScript</span><svg class="barcode" data-code="image-dataset-collector" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg></span>
+        </a></li>
+        <li><a class="card" href="https://github.com/EnesCatalca/FaceGuard">
+          <span class="no">03</span><span class="kanji" lang="ja" aria-hidden="true">守</span>
+          <img src="assets/p/mask.webp" alt="" width="480" height="480" loading="lazy">
+          <strong>FaceGuard</strong>
+          <span class="desc">Locks Windows when the webcam stops seeing you. Built on YuNet and SFace. A convenience lock, not access control.</span>
+          <span class="meta"><span>Python</span><svg class="barcode" data-code="FaceGuard" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg></span>
+        </a></li>
+        <li><a class="card" href="https://github.com/EnesCatalca/opencv">
+          <span class="no">04</span><span class="kanji" lang="ja" aria-hidden="true">学</span>
+          <img src="assets/p/owl.webp" alt="" width="480" height="480" loading="lazy">
+          <strong>OpenCV notes</strong>
+          <span class="desc">Worked examples from image basics to plate reading, vehicle counting and hand gestures. Written in Turkish.</span>
+          <span class="meta"><span>Python</span><svg class="barcode" data-code="opencv" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg></span>
+        </a></li>
+        <li><a class="card" href="https://github.com/EnesCatalca/mal-tierlist-maker">
+          <span class="no">05</span><span class="kanji" lang="ja" aria-hidden="true">段</span>
+          <img src="assets/p/pagoda.webp" alt="" width="480" height="480" loading="lazy">
+          <strong>MAL Tierlist Maker</strong>
+          <span class="desc">Turns a MyAnimeList profile into a tier list you can rearrange by dragging and export as PNG.</span>
+          <span class="meta"><span>React</span><svg class="barcode" data-code="mal-tierlist-maker" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg></span>
+        </a></li>
+        <li class="slot">
+          <span class="no">06</span>
+          <span class="slot-body"><span class="hatch" aria-hidden="true"></span><strong>Next: an agent</strong><span class="desc">The first project in the new direction. Reserved.</span></span>
+        </li>
+      </ol>
     </section>
 
-    <section class="band" id="work">
-      <div class="band-head">
-        <h2>Earlier work</h2>
-        <button type="button" id="pause">Pause</button>
+    <!-- City band: three slanted panels of one plate -->
+    <figure class="city" aria-label="A dense city at night seen from a rooftop">
+      <div class="slices" aria-hidden="true">
+        <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span>
       </div>
+      <figcaption><span class="wide">THE NEXT BUILD</span><span lang="ja">次の作品</span><span class="mono">PLATE B · CITY / NIGHT</span></figcaption>
+    </figure>
 
-      <div class="reel">
-        <ul class="track" id="track">
-          <li><a class="stamp red" href="https://github.com/EnesCatalca/YOLO_Ders">
-            <span class="name">YOLO</span><img src="assets/hawk.webp" alt="" width="480" height="480">
-            <span class="foot"><span>Python</span><span lang="ja" aria-hidden="true">眼</span></span></a></li>
-          <li><a class="stamp cream" href="https://github.com/EnesCatalca/image-dataset-collector">
-            <span class="name">Dataset Collector</span><img src="assets/prints.webp" alt="" width="480" height="480">
-            <span class="foot"><span>JavaScript</span><span lang="ja" aria-hidden="true">集</span></span></a></li>
-          <li><a class="stamp black" href="https://github.com/EnesCatalca/FaceGuard">
-            <span class="name">FaceGuard</span><img src="assets/mask.webp" alt="" width="480" height="480">
-            <span class="foot"><span>Python</span><span lang="ja" aria-hidden="true">守</span></span></a></li>
-          <li><a class="stamp cream" href="https://github.com/EnesCatalca/opencv">
-            <span class="name">OpenCV Notes</span><img src="assets/owl.webp" alt="" width="480" height="480">
-            <span class="foot"><span>Python</span><span lang="ja" aria-hidden="true">学</span></span></a></li>
-          <li><a class="stamp red" href="https://github.com/EnesCatalca/mal-tierlist-maker">
-            <span class="name">Tierlist Maker</span><img src="assets/pagoda.webp" alt="" width="480" height="480">
-            <span class="foot"><span>React</span><span lang="ja" aria-hidden="true">段</span></span></a></li>
-        </ul>
-      </div>
-
-      <ul class="rows">
-        <li><a href="https://github.com/EnesCatalca/YOLO_Ders"><strong>YOLO object detection</strong><span>YOLOv3 on images, video and an Android camera, plus a custom YOLOv4 trained on 800 labelled images to spot Boston Dynamics' Spot.</span></a></li>
-        <li><a href="https://github.com/EnesCatalca/image-dataset-collector"><strong>Image Dataset Collector</strong><span>A Chrome and Brave extension that saves web images into your folder as sequentially numbered JPEGs.</span></a></li>
-        <li><a href="https://github.com/EnesCatalca/FaceGuard"><strong>FaceGuard</strong><span>Locks Windows when the webcam stops seeing you. Built on YuNet and SFace. A convenience lock, not access control.</span></a></li>
-        <li><a href="https://github.com/EnesCatalca/opencv"><strong>OpenCV notes</strong><span>Worked examples from image basics to plate reading, vehicle counting and hand gestures. Written in Turkish.</span></a></li>
-        <li><a href="https://github.com/EnesCatalca/mal-tierlist-maker"><strong>MAL Tierlist Maker</strong><span>Turns a MyAnimeList profile into a tier list you can rearrange by dragging and export as PNG.</span></a></li>
-      </ul>
+    <!-- 03 · Open source -->
+    <section class="oss" id="open-source" aria-labelledby="oss-h" data-sec="§02 OPEN SOURCE">
+      <header class="sec-head">
+        <h2 id="oss-h">Open<br>source</h2>
+        <p class="jp-side" lang="ja" aria-hidden="true">オープンソース</p>
+      </header>
+      <a class="ticket" href="https://github.com/avenoxai/avenoxbeyin/pull/881">
+        <span class="ticket-top"><span class="tag">MERGED</span><span class="mono">avenoxai / avenoxbeyin · PR 881</span></span>
+        <strong>avenoxbeyin</strong>
+        <span class="desc">A persistent memory system for AI coding agents. My fix makes its command line name a refused state write instead of failing with a bare PermissionError.</span>
+        <span class="ticket-foot"><svg class="barcode" data-code="avenoxbeyin-881" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">VIEW PR ↗</span></span>
+      </a>
     </section>
 
-    <section class="band" id="open-source">
-      <div class="band-head"><h2>Open source</h2></div>
-      <ul class="rows">
-        <li><a href="https://github.com/avenoxai/avenoxbeyin/pull/881"><strong>avenoxbeyin <em>merged</em></strong><span>A persistent memory system for AI coding agents. My fix makes its command line name a refused state write instead of failing with a bare PermissionError.</span></a></li>
-      </ul>
-    </section>
-
-    <section class="band contact" id="contact">
-      <div>
-        <h2>Get in touch</h2>
+    <!-- 04 · Contact -->
+    <section class="contact" id="contact" aria-labelledby="contact-h" data-sec="§03 CONTACT">
+      <h2 id="contact-h"><span>GET IN</span><span>TOUCH</span></h2>
+      <div class="contact-body">
+        <p class="jp-side" lang="ja" aria-hidden="true">連絡</p>
         <p>Open an issue on any repository, or find me on GitHub.</p>
-        <a class="button" href="https://github.com/EnesCatalca">@EnesCatalca ↗</a>
+        <a class="button" href="https://github.com/EnesCatalca">@EnesCatalca <span aria-hidden="true">↗</span></a>
       </div>
-      <img src="assets/toad.webp" alt="A toad resting on a small cloud" width="480" height="480">
+      <img src="assets/p/toad.webp" alt="A toad resting on a small cloud" width="480" height="480" loading="lazy">
     </section>
   </main>
+
+  <footer class="foot">
+    <span>ENESCATALCA.GITHUB.IO</span>
+    <span lang="ja">記録 001</span>
+    <span>FILE 001 · 2026</span>
+  </footer>
 </body>
 </html>
